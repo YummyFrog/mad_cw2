@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
-import 'details_screen.dart'; // Import the DetailsScreen
-import 'recipe_model.dart'; // Import the Recipe model
+import 'details_screen.dart';
+import 'recipe_model.dart';
 
 class HomeScreen extends StatelessWidget {
-  // List of recipes (hardcoded for now)
   final List<Recipe> recipes = [
     Recipe(
       name: 'Pasta',
       ingredients: 'Pasta, Tomato Sauce, Cheese',
       instructions: 'Boil pasta, add sauce, and sprinkle cheese.',
+      image: 'assets/images/k_Photo_Recipes_2023-01-Caramelized-Tomato-Paste-Pasta_06-CARAMELIZED-TOMATO-PASTE-PASTA-039.jpg',
     ),
     Recipe(
       name: 'Pancakes',
       ingredients: 'Flour, Milk, Eggs, Sugar',
       instructions: 'Mix ingredients, cook on a pan, and serve.',
+      image: 'assets/images/21014-Good-old-Fashioned-Pancakes-mfs_002-0e249c95678f446291ebc9408ae64c05.jpg',
     ),
     Recipe(
       name: 'Salad',
       ingredients: 'Lettuce, Tomato, Cucumber, Dressing',
       instructions: 'Chop vegetables, mix, and add dressing.',
+      image: 'assets/images/caesar-salad.jpg',
     ),
   ];
 
@@ -26,16 +28,18 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Recipes'), // Title of the app bar
+        title: Text('Recipes'),
       ),
       body: ListView.builder(
-        itemCount: recipes.length, // Number of recipes
+        itemCount: recipes.length,
         itemBuilder: (context, index) {
-          final recipe = recipes[index]; // Get the recipe at the current index
+          final recipe = recipes[index];
           return ListTile(
-            title: Text(recipe.name), // Display the recipe name
+            leading: CircleAvatar(
+              backgroundImage: AssetImage(recipe.image),
+            ),
+            title: Text(recipe.name),
             onTap: () {
-              // Navigate to the DetailsScreen when a recipe is tapped
               Navigator.push(
                 context,
                 MaterialPageRoute(

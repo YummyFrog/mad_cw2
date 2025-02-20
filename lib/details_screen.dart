@@ -1,9 +1,8 @@
-// details_screen.dart
 import 'package:flutter/material.dart';
-import 'recipe_model.dart'; // Import the Recipe model
+import 'recipe_model.dart';
 
 class DetailsScreen extends StatelessWidget {
-  final Recipe recipe; // The selected recipe to display
+  final Recipe recipe;
 
   const DetailsScreen({super.key, required this.recipe});
 
@@ -11,24 +10,24 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(recipe.name), // Display the recipe name in the app bar
+        title: Text(recipe.name),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0), // Add some padding
+        padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start, // Align text to the left
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Ingredients:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            Text(recipe.ingredients), // Display the ingredients
-            SizedBox(height: 20), // Add some spacing
+            Text(recipe.ingredients),
+            SizedBox(height: 20),
             Text(
               'Instructions:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            Text(recipe.instructions), // Display the instructions
+            Text(recipe.instructions),
           ],
         ),
       ),

@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomeScreen(), // Set HomeScreen as the initial screen
+      home: HomeScreen(), // Set HomeScreen as the main screen
     );
   }
 }
